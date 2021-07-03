@@ -8,6 +8,6 @@ interface UserService {
     @GET("/users")
     suspend fun getUsers(
         @Query("since") since: Int,
-        @Query("per_page") skip: Int,
+        @Query("per_page") perPage: Int,
     ): List<User>
 }
