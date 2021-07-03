@@ -1,4 +1,4 @@
-package demo.lutas.gitgubusers
+package demo.lutas.gitgubusers.presentation.views
 
 import android.app.Application
 import demo.lutas.gitgubusers.di.appModule
