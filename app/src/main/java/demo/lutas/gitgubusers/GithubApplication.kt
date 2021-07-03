@@ -1,6 +1,7 @@
 package demo.lutas.gitgubusers
 
 import android.app.Application
+import demo.lutas.gitgubusers.di.appModule
 import demo.lutas.gitgubusers.di.remoteModule
 import org.koin.core.context.GlobalContext.startKoin
 
@@ -12,7 +13,7 @@ class GithubApplication: Application() {
 
     private fun initKoin() {
         startKoin {
-            modules(remoteModule)
+            modules(appModule, remoteModule)
         }
     }
 }
