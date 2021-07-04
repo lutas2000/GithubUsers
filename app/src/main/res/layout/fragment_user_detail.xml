@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:padding="16dp"
+	android:background="#fff">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/image_close"
+			android:layout_width="36dp"
+			android:layout_height="36dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/ic_baseline_close_36" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/image_avatar"
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:layout_marginTop="60dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:background="#000000"/>
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/text_name"
+			style="@style/TextAppearance.MaterialComponents.Headline5"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/image_avatar"
+			tools:text="Nameeeeee"/>
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/text_bio"
+			style="@style/TextAppearance.MaterialComponents.Body1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/text_name"
+			tools:text="biobiobiobiobi"/>
+
+		<View
+			android:id="@+id/view_divider"
+			android:layout_width="0dp"
+			android:layout_height="1dp"
+			android:layout_marginTop="32dp"
+			android:background="#000000"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/text_bio" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/image_login"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_marginTop="32dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/view_divider"
+			app:srcCompat="@drawable/ic_baseline_account_circle_36" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/text_login"
+			style="@style/TextAppearance.MaterialComponents.Body2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="24dp"
+			android:maxLines="1"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/image_login"
+			app:layout_constraintTop_toBottomOf="@+id/view_divider"
+			tools:text="Login" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/text_badge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="4dp"
+			android:background="@drawable/background_badge_staff"
+			android:text="STAFF"
+			android:textColor="@color/white"
+			android:textSize="12sp"
+			android:visibility="gone"
+			app:layout_constraintStart_toStartOf="@+id/text_login"
+			app:layout_constraintTop_toBottomOf="@+id/text_login"
+			tools:visibility="visible" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/text_location"
+			style="@style/TextAppearance.MaterialComponents.Body2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:maxLines="1"
+			app:layout_constraintBottom_toBottomOf="@+id/image_location"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/image_location"
+			app:layout_constraintTop_toTopOf="@+id/image_location"
+			tools:text="Location" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/image_location"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_marginTop="32dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/image_login"
+			app:srcCompat="@drawable/ic_baseline_location_on_36" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/image_blog"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_marginTop="32dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/image_location"
+			app:srcCompat="@drawable/ic_baseline_link_36" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/text_blog"
+			style="@style/TextAppearance.MaterialComponents.Body2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:maxLines="1"
+			android:autoLink="web"
+			app:layout_constraintBottom_toBottomOf="@+id/image_blog"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/image_blog"
+			app:layout_constraintTop_toTopOf="@+id/image_blog"
+			tools:text="https://google.com" />
+
+		<androidx.core.widget.ContentLoadingProgressBar
+			android:id="@+id/progress_bar"
+			style="?android:attr/progressBarStyleLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
