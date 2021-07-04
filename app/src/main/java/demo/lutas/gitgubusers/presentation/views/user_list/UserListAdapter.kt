@@ -12,7 +12,11 @@ import demo.lutas.gitgubusers.domain.data.entities.User
 import kotlinx.android.synthetic.main.item_user_list.view.*
 
 class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(item: User?) {
+    interface Action {
+        fun onItemClick(login: String)
+    }
+
+    fun bind(item: User?, action: Action) {
         item?.apply {
             itemView.text_login.text = login
             itemView.text_badge.visibility = if (siteAdmin) View.VISIBLE else View.GONE
@@ -20,12 +24,17 @@ class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 .load(avatarUrl)
                 .circleCrop()
                 .into(itemView.image_avatar)
+            itemView.setOnClickListener {
+                action.onItemClick(login)
+            }
         }
     }
 }
 
-class UserListAdapter(diffCallback: DiffUtil.ItemCallback<User>) :
-    PagingDataAdapter<User, UserViewHolder>(diffCallback) {
+class UserListAdapter(
+    diffCallback: DiffUtil.ItemCallback<User>,
+    private val action: UserViewHolder.Action
+) : PagingDataAdapter<User, UserViewHolder>(diffCallback) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -37,6 +46,6 @@ class UserListAdapter(diffCallback: DiffUtil.ItemCallback<User>) :
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item)
+        holder.bind(item, action)
     }
 }
