@@ -16,7 +16,10 @@ class UserRemoteRepository(private val service: UserService): UserRepository {
         }.flowOn(Dispatchers.IO)
     }
 
-    override fun getUserDetail(): Flow<User> {
-        TODO("Not yet implemented")
+    override fun getUserDetail(login: String): Flow<User> {
+        return flow {
+            val user = service.getUserDetail(login)
+            emit(user)
+        }.flowOn(Dispatchers.IO)
     }
 }
