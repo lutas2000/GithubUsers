@@ -1,7 +1,7 @@
 package demo.lutas.gitgubusers.presentation.data.remote
 
 import demo.lutas.gitgubusers.domain.data.entities.User
-import demo.lutas.gitgubusers.presentation.data.repositories.UserRemoteRepository
+import demo.lutas.gitgubusers.presentation.data.repositories.UserRepositoryImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -25,7 +25,7 @@ class UserRemoteRepositoryTest {
     @Test
     fun `get user detail Success`() = runBlocking {
         // arrange
-        val repository = UserRemoteRepository(service)
+        val repository = UserRepositoryImpl(service)
         val user = User(
             id = 1,
             login = "User 1",
@@ -43,7 +43,7 @@ class UserRemoteRepositoryTest {
     @Test
     fun `get user detail Failed`() = runBlocking {
         // arrange
-        val repository = UserRemoteRepository(service)
+        val repository = UserRepositoryImpl(service)
         coEvery { service.getUserDetail(any()) } throws IllegalAccessException()
         // action
         var result: Throwable? = null
