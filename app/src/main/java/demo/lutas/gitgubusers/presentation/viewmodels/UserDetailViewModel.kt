@@ -13,9 +13,8 @@ import kotlinx.coroutines.launch
 class UserDetailViewModel(private val userRepository: UserRepository): ViewModel() {
     private val _state = MutableLiveData<UserDetailState>()
     val state: LiveData<UserDetailState> get() = _state
-    private val perPage = 20
 
-    fun getUserList(login: String) {
+    fun getUserDetail(login: String) {
         viewModelScope.launch {
             userRepository.getUserDetail(login)
                 .onStart { _state.value = UserDetailState.Loading }
